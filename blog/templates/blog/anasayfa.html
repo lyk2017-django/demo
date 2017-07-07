@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load static %}
 <!DOCTYPE html>
 
 {% block title %}
@@ -10,15 +11,9 @@ Merhaba Dünya
 {% endblock %}
 
 {% block css %}
-    <style type="text/css">
-        body {
-            font-family:sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static "blog/css/anasayfa.css" %}">
 {% endblock %}
 
 {% block js %}
-    <script type="application/javascript">
-        alert("Merhaba")
-    </script>
+    <script src="{% static "blog/js/anasayfa.js" %}"></script>
 {% endblock %}
