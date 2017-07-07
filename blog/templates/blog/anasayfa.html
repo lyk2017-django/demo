@@ -7,7 +7,19 @@ Anasayfa
 {% endblock %}
 
 {% block body %}
-Merhaba Dünya
+    <h1>Anasayfa</h1>
+    {% if isim %}
+        <p>Merhaba {{ isim }}</p>
+    {% else %}
+        <form action="." method="POST">
+            {% csrf_token %}
+            <label>
+                Adınız Nedir
+                <input id="isim" name="isim" type="text">
+            </label>
+            <button type="submit">Gönder</button>
+        </form>
+    {% endif %}
 {% endblock %}
 
 {% block css %}
