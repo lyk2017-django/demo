@@ -1,10 +1,24 @@
+{% extends "blog/base.html" %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Anasayfa</title>
-</head>
-<body>
-    Merhaba Dünya
-</body>
-</html>
+
+{% block title %}
+Anasayfa
+{% endblock %}
+
+{% block body %}
+Merhaba Dünya
+{% endblock %}
+
+{% block css %}
+    <style type="text/css">
+        body {
+            font-family:sans-serif;
+        }
+    </style>
+{% endblock %}
+
+{% block js %}
+    <script type="application/javascript">
+        alert("Merhaba")
+    </script>
+{% endblock %}
