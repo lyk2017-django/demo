@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}
+{{ entry.title }}
+{% endblock %}
+
+{% block body %}
+    {{ entry.body }}
+    <hr>
+    Okuma Sayısı : {{ entry.reads }}<br>
+    Beğeni : {{ entry.likes }}<br>
+    {% if entry.tags.exists %}
+        <hr>
+        {% for tag in entry.tags.all %}
+            {{ tag.name }},
+        {% endfor %}
+
+    {% endif %}
+    {% if entry.award %}
+        <hr>
+        {{ entry.award.name }}
+    {% endif %}
+    <hr>
+    <form action="." method="POST">
+    {% csrf_token %}
+    <button name="report">Şikayet Et</button>
+    <button name="like">Beğen</button>
+    </form>
+{% endblock %}
+
