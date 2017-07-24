@@ -1,3 +1,12 @@
 body {
     font-family:sans-serif;
 }
+a {
+    color: red;
+}
+hr {
+    color: blue;
+}
+h1 {
+    text-shadow:  3px 3px orange;
+}

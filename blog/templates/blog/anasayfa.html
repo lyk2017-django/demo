@@ -1,6 +1,5 @@
 {% extends "blog/base.html" %}
 {% load static %}
-<!DOCTYPE html>
 
 {% block title %}
 Anasayfa
@@ -9,7 +8,8 @@ Anasayfa
 {% block body %}
     <h1>Anasayfa</h1>
     {% if isim %}
-        <p>Merhaba {{ isim }}</p>
+        <p>Merhaba {{ isim }}, gönderi listesi için <a href="{% url "listele" %}">tıklayınız</a></p>
+        <img src="{% static "blog/img/webdev.gif" %}">
     {% else %}
         <form action="." method="POST">
             {% csrf_token %}
@@ -20,12 +20,4 @@ Anasayfa
             <button type="submit">Gönder</button>
         </form>
     {% endif %}
-{% endblock %}
-
-{% block css %}
-    <link rel="stylesheet" href="{% static "blog/css/anasayfa.css" %}">
-{% endblock %}
-
-{% block js %}
-    <script src="{% static "blog/js/anasayfa.js" %}"></script>
 {% endblock %}
