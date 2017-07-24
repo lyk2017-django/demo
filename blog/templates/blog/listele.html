@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}
+Liste
+{% endblock %}
+
+{% block body %}
+    <ul>
+    {% for entry in entries %}
+        <li><a href="{% url "goster" entry_id=entry.id %}">{{ entry.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+
